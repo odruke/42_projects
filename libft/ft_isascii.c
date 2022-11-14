@@ -6,18 +6,18 @@
 /*   By: odruke <marvin@42lausanne.ch>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/11 10:41:57 by odruke            #+#    #+#             */
-/*   Updated: 2022/11/11 10:42:14 by odruke           ###   ########.fr       */
+/*   Updated: 2022/11/14 09:08:21 by odruke           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_isascii(int a)
+int	ft_isascii(int a)
 {
-    if(a >= 0 && a <= 0177)
-    {
-        return (1);
-    }
-    else
-    {
-        return (0);
-    }
+	if (a >= 0 && a <= 127)
+	{
+		return (1);
+	}
+	else
+	{
+		return (0);
+	}
 }

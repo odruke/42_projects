@@ -6,16 +6,15 @@
 /*   By: odruke <marvin@42lausanne.ch>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/11 10:41:39 by odruke            #+#    #+#             */
-/*   Updated: 2022/11/11 10:41:44 by odruke           ###   ########.fr       */
+/*   Updated: 2022/11/14 08:54:46 by odruke           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "mylib.h"
 
-int ft_isalpha(int a)
+int	ft_isalpha(int a)
 {
-    if((a >= 'a' && a <= 'z') || (a >= 'A' && a <= 'Z'))
-        return (1);
-    
-    return (0);
+	if ((a >= 'a' && a <= 'z') || (a >= 'A' && a <= 'Z'))
+		return (1);
+	return (0);
 }

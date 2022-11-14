@@ -6,18 +6,18 @@
 /*   By: odruke <marvin@42lausanne.ch>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/11 10:42:41 by odruke            #+#    #+#             */
-/*   Updated: 2022/11/11 10:42:44 by odruke           ###   ########.fr       */
+/*   Updated: 2022/11/14 08:57:49 by odruke           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_isdigit(int a)
+int	ft_isdigit(int a)
 {
-    if(a >= '0' && a <= '9')
-    {
-        return (1);
-    }
-    else
-    {
-        return (0);
-    }
+	if (a >= '0' && a <= '9')
+	{
+		return (1);
+	}
+	else
+	{
+		return (0);
+	}
 }

@@ -1,11 +1,12 @@
 #include <stdio.h>
 #include "mylib.h"
+#include <string.h>
 
-int main(int ac, char **av)
+int main()
 {
-    if (ac > 1)
+	char	frase[] = "muchas mas cosas234234./././@#@";
     {
-        printf("en mi funcion, str tiene %d tamano\n", ft_strlen(av[1][0]))
-        printf("en mi funcion, str tiene %d tamano", strlen(av[1][0]))
+        printf("en mi funcion, str tiene %lu tamano\n", ft_strlen(frase));
+        printf("en mi funcion, str tiene %lu tamano", strlen(frase));
     }
 }

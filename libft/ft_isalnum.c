@@ -6,23 +6,22 @@
 /*   By: odruke <marvin@42lausanne.ch>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/11 10:41:14 by odruke            #+#    #+#             */
-/*   Updated: 2022/11/11 10:41:20 by odruke           ###   ########.fr       */
+/*   Updated: 2022/11/14 09:01:21 by odruke           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_isalnum(int a)
+int	ft_isalnum(int a)
 {
-    if((a >= 'a' && a <= 'z') || (a >= 'A' && a <= 'Z'))
-    {
-       return (1);
-    }
-    else if(a >= '0' && a <= '9')
-    {
-       return (1);
-    }
-    else
-    {
-       return (0);
-    }
-
+	if ((a >= 'a' && a <= 'z') || (a >= 'A' && a <= 'Z'))
+	{
+		return (1);
+	}
+	else if (a >= '0' && a <= '9')
+	{
+		return (1);
+	}
+	else
+	{
+		return (0);
+	}
 }
