@@ -1,25 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: odruke <marvin@42lausanne.ch>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/14 10:49:47 by odruke            #+#    #+#             */
-/*   Updated: 2022/11/14 10:58:22 by odruke           ###   ########.fr       */
+/*   Created: 2022/11/15 09:27:34 by odruke            #+#    #+#             */
+/*   Updated: 2022/11/15 11:09:42 by odruke           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 #include "mylib.h"
 
-size_t	ft_strlen(const char *s)
+void	ft_bzero(void *s, size_t n)
 {
 	size_t	i;
+	char	*p;
 
+	p = (char *)s;
 	i = 0;
-	while (s[i] != '\0')
-	{
-		i++;
-	}
-	return (i);
+	while (i < n)
+		p[i++] = '\0';
+	return ;
 }
