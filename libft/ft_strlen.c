@@ -6,11 +6,11 @@
 /*   By: odruke <marvin@42lausanne.ch>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/14 10:49:47 by odruke            #+#    #+#             */
-/*   Updated: 2022/11/14 10:58:22 by odruke           ###   ########.fr       */
+/*   Updated: 2022/11/17 09:17:12 by odruke           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "mylib.h"
+#include "libft.h"
 
 size_t	ft_strlen(const char *s)
 {

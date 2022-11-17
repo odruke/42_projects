@@ -6,10 +6,10 @@
 /*   By: odruke <marvin@42lausanne.ch>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/15 09:27:34 by odruke            #+#    #+#             */
-/*   Updated: 2022/11/15 11:09:42 by odruke           ###   ########.fr       */
+/*   Updated: 2022/11/17 09:17:33 by odruke           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include "mylib.h"
+#include "libft.h"
 
 void	ft_bzero(void *s, size_t n)
 {
