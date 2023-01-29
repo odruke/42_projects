@@ -12,14 +12,14 @@
 
 #include "libft.h"
 
-void    *ft_memmove(void *dst, const void *src, size_t n)
+void	*ft_memmove(void *dst, const void *src, size_t n)
 {
-	unsigned char   *bdst;
-	unsigned char   *bsrc;
+	unsigned char	*bdst;
+	unsigned char	*bsrc;
 
 	bdst = (unsigned char *) dst;
 	bsrc = (unsigned char *) src;
-	if (d < s)
+	if (bdst < bsrc)
 	{
 		while (n > 0)
 		{
@@ -28,12 +28,12 @@ void    *ft_memmove(void *dst, const void *src, size_t n)
 			bsrc++;
 			n--;
 		}
-	else 
+	}	
+	else
 		while (n > 0)
 		{
 			bdst[n] = bsrc[n];
-			n--:
+			n--;
 		}
-	}
 	return (dst);
 }
