@@ -6,7 +6,7 @@
 /*   By: odruke <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/18 18:04:59 by odruke            #+#    #+#             */
-/*   Updated: 2023/02/22 11:22:20 by druke            ###   ########.fr       */
+/*   Updated: 2023/02/28 14:36:45 by druke            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 		dst[d + s] = src[s];
 		s++;
 	}
-	dst[d + s] = '\0';
-	return (ft_strlen(src) + ft_strlen(dst));
+	if (d < size)
+		dst[d + s] = '\0';
+	return (ft_strlen(src) + d);
 }
