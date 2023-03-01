@@ -6,7 +6,7 @@
 /*   By: druke <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/21 20:34:12 by druke             #+#    #+#             */
-/*   Updated: 2023/02/22 12:21:57 by druke            ###   ########.fr       */
+/*   Updated: 2023/03/01 12:03:45 by druke            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,19 +20,19 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	char	*ns;
 
 	if (!s1 || !s2)
-		return 	(NULL);
+		return (NULL);
 	ls1 = ft_strlen(s1);
 	tl = (ft_strlen(s1) + ft_strlen(s2));
-	ns = (char *)malloc((tl +1) * sizeof(char));
+	ns = (char *)malloc((tl + 1) * sizeof(char));
 	if (!ns)
 		return (NULL);
-	ft_strlcpy(ns, s1, ls1);
+	ft_strlcpy(ns, s1, ls1 + 1);
 	i = 0;
 	while (s2[i])
 	{
 		ns[ls1 + i] = s2[i];
 		i++;
 	}
-	ns[ls1 + i] = '\0';
+	ns[tl] = '\0';
 	return (ns);
 }
