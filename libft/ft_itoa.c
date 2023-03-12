@@ -6,50 +6,73 @@
 /*   By: druke <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/08 11:51:39 by druke             #+#    #+#             */
-/*   Updated: 2023/03/08 12:41:54 by druke            ###   ########.fr       */
+/*   Updated: 2023/03/12 12:01:19 by druke            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static long int	flen(unsigned long int n)
+static int	flen(int n)
 {
-	long int	len;
+	int	len;
 
 	len = 0;
-	while(n > 0)
+	if (n == -2147483648)
+		n++;
+	if (n < 0)
+		n *= -1;
+	if (n == 0)
+		len = 1;
+	while (n > 0)
 	{
-		n = (n / 10);
+		n /= 10;
 		len++;
 	}
 	return (len);
 }
 
-/*static char	*str(char	*s, int n, unsigned long int len)
+static char	*array(char *nc, int n, int len)
 {
-	
+	if (n == -2147483648)
+	{
+		nc[0] = '-';
+		nc[1] = '2';
+		n = 147483648;
+		while (n > 0)
+		{
+			nc[len] = 48 + (n % 10);
+			n /= 10;
+			len--;
+		}
+	}
+	while (n > 0)
+	{
+		nc[len] = 48 + (n % 10);
+		n /= 10;
+		len--;
+	}
+	return (nc);
 }
-*/
+
 char	*ft_itoa(int n)
 {
 	char	*nc;
 	size_t	len;
-	unsigned long int temp;
 
-	temp = n;
 	len = flen(n);
 	if (n < 0)
 		len++;
-	if(!*nc = malloc((sizeof char) * (len + 1)))
+	nc = (char *)malloc(sizeof (char) * (len + 1));
+	if (!nc)
 		return (NULL);
-	temp[len + 1] = '\0';
-	while (temp > 0)
+	nc[len--] = '\0';
+	if (n == 0)
+		nc[0] = '0';
+	if (n < 0 && n != -2147483648)
 	{
-		nc[len] = temp % 10;
-		temp = temp / 10;
-		len--;
+		n *= -1;
+		nc[0] = '-';
 	}
-	if (n < 0)
-		nc[len] = '-';
-	return (*nc);
+	array(nc, n, len);
+	return (nc);
 }

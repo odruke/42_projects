@@ -6,7 +6,7 @@
 /*   By: druke <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/20 20:38:41 by druke             #+#    #+#             */
-/*   Updated: 2023/02/27 14:05:21 by druke            ###   ########.fr       */
+/*   Updated: 2023/03/11 19:46:13 by druke            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,4 +43,5 @@ char	*ft_substr(char const *s, unsigned int start, size_t len);
 char	*ft_strjoin(char const *s1, char const *s2);
 char	*ft_strtrim(char const *s1, char const *set);
 int	ft_memcmp(const void *s1, const void *s2, size_t n);
+char 	*ft_itoa(int n);
 #endif

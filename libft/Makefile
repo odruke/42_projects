@@ -6,7 +6,7 @@
 #    By: druke <marvin@42.fr>                       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/19 20:24:30 by druke             #+#    #+#              #
-#    Updated: 2023/02/27 14:05:58 by druke            ###   ########.fr        #
+#    Updated: 2023/03/11 19:46:48 by druke            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -38,6 +38,7 @@ SRC = ft_isalpha.c\
       ft_strjoin.c\
       ft_strtrim.c\
       ft_memcmp.c\
+      ft_itoa.c\
 
 
 OBJS = ft_isalpha.o\
@@ -66,6 +67,7 @@ OBJS = ft_isalpha.o\
        ft_strjoin.o\
        ft_strtrim.o\
        ft_memcmp.o\
+       ft_itoa.o\
 
 CC = gcc
 
