@@ -6,7 +6,7 @@
 /*   By: druke <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/20 20:38:41 by druke             #+#    #+#             */
-/*   Updated: 2023/03/13 15:40:15 by druke            ###   ########.fr       */
+/*   Updated: 2023/03/13 21:26:19 by druke            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,4 +46,5 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n);
 char 	*ft_itoa(int n);
 char	**ft_split(char const *s, char c);
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
+void	ft_striteri(char *s, void (*f)(unsigned int, char*));
 #endif
