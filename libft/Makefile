@@ -6,7 +6,7 @@
 #    By: druke <marvin@42.fr>                       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/19 20:24:30 by druke             #+#    #+#              #
-#    Updated: 2023/03/14 07:37:43 by druke            ###   ########.fr        #
+#    Updated: 2023/03/14 22:22:34 by druke            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -43,6 +43,7 @@ SRC = ft_isalpha.c\
       ft_strmapi.c\
       ft_striteri.c\
       ft_putchar_fd.c\
+      ft_putstr_fd.c\
 
 
 OBJS = ft_isalpha.o\
@@ -76,6 +77,7 @@ OBJS = ft_isalpha.o\
        ft_strmapi.o\
        ft_striteri.o\
        ft_putchar_fd.o\
+       ft_putstr_fd.o\
 
 CC = gcc
 
