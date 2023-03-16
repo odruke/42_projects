@@ -6,7 +6,7 @@
 #    By: druke <marvin@42.fr>                       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/19 20:24:30 by druke             #+#    #+#              #
-#    Updated: 2023/03/15 16:10:34 by druke            ###   ########.fr        #
+#    Updated: 2023/03/15 16:22:19 by druke            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -45,6 +45,7 @@ SRC = ft_isalpha.c\
       ft_putchar_fd.c\
       ft_putstr_fd.c\
       ft_putendl_fd.c\
+      ft_putnbr_fd.c\
 
 
 OBJS = ft_isalpha.o\
@@ -79,7 +80,8 @@ OBJS = ft_isalpha.o\
        ft_striteri.o\
        ft_putchar_fd.o\
        ft_putstr_fd.o\
-       ft_putendl_fd.o
+       ft_putendl_fd.o\
+       ft_putnbr_fd.o\
 
 CC = gcc
 
