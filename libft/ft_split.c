@@ -6,7 +6,7 @@
 /*   By: druke <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/05 12:38:25 by druke             #+#    #+#             */
-/*   Updated: 2023/03/13 15:21:53 by druke            ###   ########.fr       */
+/*   Updated: 2023/03/19 17:18:55 by druke            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,22 +47,22 @@ static int	nosubstr(const char *s, char del)
 	}
 }
 */
-static int	sblen(char *s, int start, char del)
+static int	f_subslen(const char *s, int start, char del)
 {
 	int	size;
 
 	size = 0;
-	while (s && *s != del)
+	while (s[start] && s[start] != del)
 	{
 		size++;
-		s++;
+		start++;
 	}
 	return (size);
 }
 char **ft_split(char const *s, char c)
 {
 	char	**ns;
-	int	sublen;
+	int	subslen;
 	int	nosub;
 	int	i;
 	int	ii;
@@ -77,11 +77,12 @@ char **ft_split(char const *s, char c)
 	{
 		while (s[i] == c)
 			i++;
-		sublen = sblen(s, i, c);
-		ns[ii] = ft_substr(s, i, sublen);
+		subslen = f_subslen(s, i, c);
+		ns[ii] = ft_substr(s, i, subslen);
 		if (!ns[ii])
 			return (NULL);
-		i += sblen;
+	//	free (ns[ii]);
+		i += subslen;
 	}
 	return (ns);
 }

@@ -6,7 +6,7 @@
 /*   By: druke <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/20 22:01:33 by druke             #+#    #+#             */
-/*   Updated: 2023/02/26 18:27:33 by druke            ###   ########.fr       */
+/*   Updated: 2023/03/19 17:14:32 by druke            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	if (!s)
 		return (NULL);
 	if ((size_t)start > ft_strlen(s))
-		return (s = (char *)ft_calloc(1, sizeof(char)));
+		return (p = (char *)ft_calloc(1, sizeof(char)));
 	if (ft_strlen(s + start) < len)
 		len = ft_strlen(s + start);
 	p = (char *)malloc((len + 1) * sizeof(char));
