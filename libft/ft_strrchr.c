@@ -6,7 +6,7 @@
 /*   By: odruke <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/18 17:14:04 by odruke            #+#    #+#             */
-/*   Updated: 2023/02/28 21:15:11 by druke            ###   ########.fr       */
+/*   Updated: 2023/03/19 13:28:32 by druke            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,18 @@
 
 char	*ft_strrchr(const char *s, int c)
 {
-	char	*res;
+	unsigned char	neddle;
+	char			*res;
 
+	neddle = (char)c;
 	res = NULL;
 	while (*s)
 	{
-		if (*s == c)
+		if (*s == neddle)
 			res = (char *)s;
 		s++;
 	}
-	if (!c)
+	if (!neddle)
 		return ((char *)s);
 	return (res);
 }
