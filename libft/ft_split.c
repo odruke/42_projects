@@ -3,108 +3,81 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: druke <marvin@42.fr>                       +#+  +:+       +#+        */
+/*   By: odruke <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/05 12:38:25 by druke             #+#    #+#             */
-/*   Updated: 2023/03/25 20:12:23 by druke            ###   ########.fr       */
+/*   Created: 2023/03/25 23:20:36 by odruke            #+#    #+#             */
+/*   Updated: 2023/03/25 23:22:47 by odruke           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	nosubstr(const char *s, char del)
+static char	*ft_strndup(const char *s, int n)
 {
-	int	i;
-	int	nosub;
-	int	check;
-
-	check = 0;
-	i = 0;
-	nosub = 0;
-	while (s[i])
-	{
-		if (s[i] != del && check == 0)
-		{
-			check = 1;
-			nosub++;
-		}
-		else if (s[i] == del)
-			check = 0;
-		i++;
-	}
-	return (nosub);
-}
-
-static char	*f_subs(char const *s, int start, unsigned long int len)
-{	
-	char	*sub;
-
-	sub = (char *)malloc((len + 1) * sizeof(char));
-	if (!sub)
-		return (NULL);
-	ft_strlcpy(sub, s + start, len + 1);
-	return (sub);
-}
-
-static int	f_subslen(const char *s, const int start, char del)
-{
-	int	size;
-	int	i;
-
-	i = start;
-	size = 0;
-	while (s[i] && s[i] != del)
-	{
-		size++;
-		i++;
-	}
-	return (size);
-}
-
-static void	f_free(char **s, int i)
-{
-	while (i > 0)
-	{
-		free (s[i]);
-		i--;
-	}
-	free (s);
-}
-
-char **ft_split(char const *s, char c)
-{
-	char	**ns;
-	int	subslen;
-	int	nosub;
-	int	i;
-	int	ii;
+	char	*res;
+	int		i;
 
 	i = 0;
-	ii = 0;
-	if (!s)
+	res = malloc(sizeof(char) * (n + 1));
+	if (res == NULL)
 		return (NULL);
-	if (!c)
-		return (NULL);
-	nosub = nosubstr(s, c);
-	if (nosub == 0)
-		return (NULL);
-	ns = (char **)malloc(sizeof(char *) * (nosub + 1));
-	if (!ns)
-		return (NULL);
-	while (ii != nosub)
+	while (i < n)
 	{
-		while (s[i] == c)
-			i++;
-		subslen = f_subslen(s, i, c);
-		ns[ii] = f_subs(s, i, subslen);
-		if (!ns[ii])
-		{
-			f_free(ns, ii);
-			return (NULL);
-		}
-		i += subslen;
-		ii++;
+		res[i] = s[i];
+		i++;
 	}
-	ns[ii] = '\0';
-	return (ns);
+	res[i] = '\0';
+	return (res);
+}
+
+static int	word_number(const char *str, char sep)
+{
+	int	count;
+	int	i;
+
+	count = 0;
+	i = -1;
+	while (str[++i])
+		if ((str[i] != sep) && (i == 0 || sep == str[i - 1]))
+			count++;
+	return (count);
+}
+
+static int	word_len(const char *str, char sep)
+{
+	int	i;
+
+	i = 0;
+	while (str[i] && sep != str[i])
+		i++;
+	return (i);
+}
+
+char	**ft_split(char const *s, char c)
+{
+	int		i;
+	int		j;
+	char	**res;
+
+	j = -1;
+	i = -1;
+	res = malloc(sizeof(res) * (word_number(s, c) + 1));
+	if (res == NULL)
+		return (NULL);
+	while (s[++i])
+	{
+		if ((c != s[i]) && (i == 0 || c == s[i - 1]))
+		{
+			res[++j] = ft_strndup(s + i, word_len(s + i, c));
+			if (res[j] == NULL)
+			{
+				while (--j >= 0)
+					free(res[j]);
+				free(res);
+				return (NULL);
+			}
+		}
+	}
+	res[++j] = NULL;
+	return (res);
 }
