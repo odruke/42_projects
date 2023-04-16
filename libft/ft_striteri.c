@@ -6,7 +6,7 @@
 /*   By: druke <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/13 21:27:29 by druke             #+#    #+#             */
-/*   Updated: 2023/03/13 22:22:32 by druke            ###   ########.fr       */
+/*   Updated: 2023/03/25 21:44:21 by odruke           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 
 	i = 0;
 	if (!s)
-		return (NULL);
+		return ;
 	while (s[i])
 	{
 		f(i, &s[i]);
