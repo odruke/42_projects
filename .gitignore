@@ -1,1 +1,8 @@
-.out
+# ignores executables
+*.out
+
+# ignores temp files
+*.swp
+
+# ignores system files
+*.DS_Store
