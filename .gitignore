@@ -6,3 +6,6 @@
 
 # ignores system files
 *.DS_Store
+
+# ignores private folders
+mythings/
