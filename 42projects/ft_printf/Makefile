@@ -6,7 +6,7 @@
 #    By: druke <marvin@42.fr>                       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/04/22 11:08:24 by druke             #+#    #+#              #
-#    Updated: 2023/04/25 21:57:19 by odruke           ###   ########.fr        #
+#    Updated: 2023/04/25 22:19:37 by odruke           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,9 +24,11 @@ INCDIR = inc
 
 LIB = libft.a
 
+FILES = 
+
 HEADER = $(addprefix $(INCDIR)/, $(LIB) ft_printf.h)
 
-SRC = $(addprefix $(SRCDIR)/, )
+SRC = $(addprefix $(SRCDIR)/,$(addsuffix .c,$(FILES))
 
 OBJ = $(SRC:.c=.o)
 
@@ -35,8 +37,8 @@ OBJ = $(SRC:.c=.o)
 ALL: $(NAME)
 
 $(NAME): $(OBJ)
-	ar rcs $(NAME) $(OBJ)
-	ranlib $(NAME)
+	ar rcs $@ $<
+	ranlib $@
 	make clean
 
 $(SRCDIR)/%.o: $(SRCDIR)/%.c $(HEADER)
@@ -49,9 +51,11 @@ $(LIB):
 
 clean: 
 	rm -rf $(OBJ)
+	make clean -C libft
 
 fclean: clean
 	rm -rf $(NAME)
+	make fclean -C libft
 
 re: fclean all
 
