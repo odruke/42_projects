@@ -6,7 +6,7 @@
 #    By: druke <marvin@42.fr>                       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/19 20:24:30 by druke             #+#    #+#              #
-#    Updated: 2023/04/22 12:55:22 by druke            ###   ########.fr        #
+#    Updated: 2023/04/25 21:42:13 by odruke           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,6 +21,8 @@ HEADER = $(addprefix $(INCDIR)/, libft.h)
 SRCDIR = src
 
 INCDIR = inc
+
+LIBDIR = /Users/odruke/Desktop/gitpriv/42projects/ft_printf/inc/
 
 SRC = $(addprefix $(SRCDIR)/, ft_isalpha.c\
       ft_isdigit.c\
@@ -67,15 +69,15 @@ $(SRCDIR)/%.o: $(SRCDIR)/%.c $(HEADER)
 	$(CC) $(CFLAGS) -c $< -o $@ -I$(INCDIR)
 
 $(NAME): $(OBJ)
-	ar rcs $(NAME) $(OBJ)
-	ranlib $(NAME)
+	ar rcs $(LIBDIR)/$(NAME) $(OBJ)
+	ranlib $(LIBDIR)/$(NAME)
 	make clean
  
 clean:
 	rm -f $(OBJ)
 
 fclean: clean
-	rm -f $(NAME)
+	rm -f $(LIBDIR)/$(NAME)
 
 re: fclean all
 

@@ -6,7 +6,7 @@
 #    By: druke <marvin@42.fr>                       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/04/22 11:08:24 by druke             #+#    #+#              #
-#    Updated: 2023/04/23 20:07:25 by odruke           ###   ########.fr        #
+#    Updated: 2023/04/25 21:57:19 by odruke           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,7 +22,9 @@ SRCDIR = src
 
 INCDIR = inc
 
-HEADER = $(addprefix $(INCDIR)/, ft_printf.h)
+LIB = libft.a
+
+HEADER = $(addprefix $(INCDIR)/, $(LIB) ft_printf.h)
 
 SRC = $(addprefix $(SRCDIR)/, )
 
@@ -37,8 +39,11 @@ $(NAME): $(OBJ)
 	ranlib $(NAME)
 	make clean
 
-$(SRCDIR)/%.o: $(OBJ) $(HEADER)
+$(SRCDIR)/%.o: $(SRCDIR)/%.c $(HEADER)
 	$(CC) $(CFLAGS) -c $< -o $@ -I$(INCDIR)
+
+$(LIB):
+	make -C libft
 
 # Phony rules
 
