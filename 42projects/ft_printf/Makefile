@@ -6,7 +6,7 @@
 #    By: druke <marvin@42.fr>                       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/04/22 11:08:24 by druke             #+#    #+#              #
-#    Updated: 2023/04/25 22:19:37 by odruke           ###   ########.fr        #
+#    Updated: 2023/04/30 15:06:54 by odruke           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,11 +24,11 @@ INCDIR = inc
 
 LIB = libft.a
 
-FILES = 
+FILES = ft_printf 
 
-HEADER = $(addprefix $(INCDIR)/, $(LIB) ft_printf.h)
+HEADER = $(addprefix $(INCDIR)/, ft_printf.h)
 
-SRC = $(addprefix $(SRCDIR)/,$(addsuffix .c,$(FILES))
+SRC = $(addprefix $(SRCDIR)/, $(addsuffix .c,$(FILES)))
 
 OBJ = $(SRC:.c=.o)
 
@@ -36,10 +36,9 @@ OBJ = $(SRC:.c=.o)
 
 ALL: $(NAME)
 
-$(NAME): $(OBJ)
-	ar rcs $@ $<
-	ranlib $@
-	make clean
+$(NAME): $(OBJ) $(LIB) 
+	ar rcs $(NAME) $(OBJ) $(addprefix $(INCDIR)/, $(LIB))
+	ranlib $(NAME)
 
 $(SRCDIR)/%.o: $(SRCDIR)/%.c $(HEADER)
 	$(CC) $(CFLAGS) -c $< -o $@ -I$(INCDIR)

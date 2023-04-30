@@ -9,9 +9,13 @@ CC = gcc
 
 CFLAGS = -Wall -Werror -Wextra
 
-HEADER = ft_printf.a
+INCDIR = /Users/odruke/Desktop/gitpriv/42projects/ft_printf/inc
 
-INCDIR = /Users/odruke/Desktop/gitpriv/42projects/ft_printf
+LIBDIR = /Users/odruke/Desktop/gitpriv/42projects/ft_printf/
+
+HEADER = $(addprefix $(INCDIR)/, ft_printf.h)
+
+LIB = $(addprefix $(LIBDIR)/, ft_printf.a)
 
 SRC = main.c
 
@@ -24,22 +28,21 @@ OBJ2 = mainc.o
 
 all: $(NAME)
 
-$(CTEST): $(OBJ) 
-	$(CC) $(CFLAGS) $(OBJ2) -o $@ 
-	make clean
+$(CTEST): $(OBJ2) $(LIB)
+	$(CC) $(CFLAGS) $(OBJ2) $(LIB) -o $@
 
-$(NAME): $(OBJ) 
-	$(CC) $(CFLAGS) $(OBJ) -o $@ 
-	make clean
+$(NAME): $(OBJ) $(LIB)
+	$(CC) $(CFLAGS) $(OBJ) $(LIB) -o $@ 
 
-$(OBJ): $(SRC) $(HEADER)
+$(OBJ): $(SRC) $(HEADER) 
 	$(CC) -c $< -o $@ -I$(INCDIR)
 
 $(OBJ2): $(SRC2) $(HEADER)
 	$(CC) -c $< -o $@ -I$(INCDIR)
 
-$(HEADER):
-	cd $(INCDIR) && make
+$(LIB):
+	cd $(LIBDIR) && make
+	chmod +x $(LIB)
 
 # Phony rules
 
@@ -49,10 +52,10 @@ clean:
 
 fclean: clean
 	rm -f $(NAME)
-	cd $(INCDIR) && make fclean
+	cd $(LIBDIR) && make fclean
 	rm -f $(CTEST)
 
 re: fclean all
-	cd $(INCDIR) && make re
+	cd $(LIBDIR) && make re
 
 .PHONY: clean fclean re

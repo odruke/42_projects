@@ -6,7 +6,7 @@
 #    By: druke <marvin@42.fr>                       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/19 20:24:30 by druke             #+#    #+#              #
-#    Updated: 2023/04/25 21:42:13 by odruke           ###   ########.fr        #
+#    Updated: 2023/04/30 12:56:57 by odruke           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -71,7 +71,6 @@ $(SRCDIR)/%.o: $(SRCDIR)/%.c $(HEADER)
 $(NAME): $(OBJ)
 	ar rcs $(LIBDIR)/$(NAME) $(OBJ)
 	ranlib $(LIBDIR)/$(NAME)
-	make clean
  
 clean:
 	rm -f $(OBJ)

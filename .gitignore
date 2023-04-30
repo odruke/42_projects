@@ -1,11 +1,14 @@
 # ignores executables
 *.out
 
-# ignores temp files
+# ignores temp and generated files
 *.swp
+*o
+*a
 
 # ignores system files
 *.DS_Store
 
 # ignores private folders
 mythings/
+
