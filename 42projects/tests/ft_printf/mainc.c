@@ -4,9 +4,9 @@
 
 int	main()
 {
-	char	str[] = {'%', 'c', 'o', 's', 'a', 's', '%'};
+	char	str[6] = "cosas";
 	int	n;
 
 	n = ft_printf(str);
-	printf("hay %i o mas coincidencias", n);
+	printf("hay %i  coincidencias", n);
 }
