@@ -6,7 +6,7 @@
 #    By: druke <marvin@42.fr>                       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/04/22 11:08:24 by druke             #+#    #+#              #
-#    Updated: 2023/04/30 15:06:54 by odruke           ###   ########.fr        #
+#    Updated: 2023/05/02 13:00:22 by druke            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,6 +32,8 @@ SRC = $(addprefix $(SRCDIR)/, $(addsuffix .c,$(FILES)))
 
 OBJ = $(SRC:.c=.o)
 
+INC = -I$(INCDIR) -Ilibft/inc
+
 # Rules
 
 ALL: $(NAME)
@@ -41,7 +43,7 @@ $(NAME): $(OBJ) $(LIB)
 	ranlib $(NAME)
 
 $(SRCDIR)/%.o: $(SRCDIR)/%.c $(HEADER)
-	$(CC) $(CFLAGS) -c $< -o $@ -I$(INCDIR)
+	$(CC) $(CFLAGS) -c $< -o $@ $(INC)
 
 $(LIB):
 	make -C libft

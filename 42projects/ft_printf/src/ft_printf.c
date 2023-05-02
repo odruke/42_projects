@@ -6,12 +6,12 @@
 /*   By: druke <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/26 18:10:07 by druke             #+#    #+#             */
-/*   Updated: 2023/05/01 21:35:55 by druke            ###   ########.fr       */
+/*   Updated: 2023/05/02 11:57:17 by druke            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//#include "libft.h"
-// #include "ft_printf.h"
+#include "libft.h"
+#include "ft_printf.h"
 #include <stdarg.h>
 
 int	ft_printf(char *str)
