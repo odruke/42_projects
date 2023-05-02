@@ -4,7 +4,7 @@
 
 int	main()
 {
-	char	str[6] = "cosas";
+	char	str[7] = "%%%%%%";
 	int	n;
 
 	n = ft_printf(str);

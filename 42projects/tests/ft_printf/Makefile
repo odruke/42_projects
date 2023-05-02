@@ -9,17 +9,8 @@ CC = gcc
 
 CFLAGS = -Wall -Werror -Wextra
 
-
-# 42 path
-#INCDIR = /Users/odruke/Desktop/gitpriv/42projects/ft_printf/inc
-
-# home path
 INCDIR = ../../ft_printf/inc
 
-# 42 path
-#LIBDIR = /Users/odruke/Desktop/gitpriv/42projects/ft_printf/
-
-# home path
 LIBDIR = ../../ft_printf
 
 HEADER = $(addprefix $(INCDIR)/, ft_printf.h)
