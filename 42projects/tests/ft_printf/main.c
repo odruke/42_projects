@@ -1,5 +1,5 @@
 #include "stdio.h"
-//#include <ft_printf.h>
+#include <ft_printf.h>
 #include "stdlib.h"
 #include "string.h"
 #include "limits.h"
@@ -16,6 +16,11 @@ int	main()
 	strcpy(str, "something here");
 	printf("===========\n");
 	printf("this is char %%c\n->%c<-\n",'a');
+
+	printf("===========\n");
+	ft_printf("this is char %%c\n->%c<-\n",'a');
+
+/*
 	printf("===========\n");
 	printf("this is string %%s\n->%s<-\n",str);
 	printf("===========\n");
@@ -47,6 +52,5 @@ int	main()
 	printf("===========\n");
 	printf("this is percentage symbol %%\n->%%<-\n");
 
-
-	free(str);
-}
+i*/
+	free(str);}

@@ -6,7 +6,7 @@
 #    By: druke <marvin@42.fr>                       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/04/22 11:08:24 by druke             #+#    #+#              #
-#    Updated: 2023/05/02 13:00:22 by druke            ###   ########.fr        #
+#    Updated: 2023/05/06 18:25:21 by druke            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,7 +24,10 @@ INCDIR = inc
 
 LIB = libft.a
 
-FILES = ft_printf 
+FILES = ft_printf\
+        ft_printchar\
+        ft_printstr\
+
 
 HEADER = $(addprefix $(INCDIR)/, ft_printf.h)
 

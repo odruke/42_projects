@@ -6,7 +6,7 @@
 #    By: druke <marvin@42.fr>                       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/19 20:24:30 by druke             #+#    #+#              #
-#    Updated: 2023/05/02 10:06:05 by druke            ###   ########.fr        #
+#    Updated: 2023/05/03 21:02:39 by druke            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,6 +25,8 @@ INCDIR = inc
 LIBDIR = ../inc/
 
 SRC = $(addprefix $(SRCDIR)/, ft_isalpha.c\
+      ft_putchar.c\
+      ft_putstr.c\
       ft_isdigit.c\
       ft_isascii.c\
       ft_isalnum.c\
