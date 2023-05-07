@@ -4,9 +4,23 @@
 #include "string.h"
 #include "limits.h"
 
+void	comparelen(int a, int b)
+{
+	if (a == b)
+		printf("return SUCCES\n");
+	else
+		printf("return FAIL\n");
+}
 int	main()
 {
 	char	*str;
+	int len1a;
+	int len1b;
+	int len2a;
+	int len2b;
+	int len3a;
+	int len3b;
+
 	str = (char *)malloc(15 * sizeof(char));
 	if (!str)
 	{
@@ -14,15 +28,18 @@ int	main()
 		return (0);
 	}
 	strcpy(str, "something here");
-	printf("===========\n");
-	printf("this is char %%c\n->%c<-\n",'a');
+	printf("def========\n");
+	len1a = printf("this is char %%c\n->%c<-\n",'a');
+	ft_printf("own========\n");
+	len1b = ft_printf("this is char %%c\n->%c<-\n",'a');
+	comparelen(len1a, len1b);
 
-	printf("===========\n");
-	ft_printf("this is char %%c\n->%c<-\n",'a');
-
+	printf("def==========\n");
+	len2a = printf("this is string %%s\n->%s<-\n",str);
+	ft_printf("own========\n");
+	len2b = ft_printf("this is string %%s\n->%s<-\n",str);
+	comparelen(len2a, len2b);
 /*
-	printf("===========\n");
-	printf("this is string %%s\n->%s<-\n",str);
 	printf("===========\n");
 	printf("this is string with a 20 width %%20s\n->%20s<-\n",str);
 	printf("===========\n");
@@ -52,5 +69,5 @@ int	main()
 	printf("===========\n");
 	printf("this is percentage symbol %%\n->%%<-\n");
 
-i*/
+*/
 	free(str);}

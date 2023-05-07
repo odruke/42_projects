@@ -6,16 +6,17 @@
 /*   By: druke <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/05 08:42:22 by druke             #+#    #+#             */
-/*   Updated: 2023/05/06 18:40:17 by druke            ###   ########.fr       */
+/*   Updated: 2023/05/07 19:19:11 by odruke           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
 #include "ft_printf.h"
 
 int	ft_printstr(char *str)
 {
 	int	i;
+
+	i = 0;
 	while(str[i])
 	{
 		ft_printchar(str[i]);

@@ -6,7 +6,7 @@
 #    By: druke <marvin@42.fr>                       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/04/22 11:08:24 by druke             #+#    #+#              #
-#    Updated: 2023/05/06 18:25:21 by druke            ###   ########.fr        #
+#    Updated: 2023/05/07 19:33:45 by odruke           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,35 +27,40 @@ LIB = libft.a
 FILES = ft_printf\
         ft_printchar\
         ft_printstr\
+		ft_printnbr\
 
 
-HEADER = $(addprefix $(INCDIR)/, ft_printf.h)
+HEADER = $(addprefix $(INCDIR)/, ft_printf.h libft.h)
 
 SRC = $(addprefix $(SRCDIR)/, $(addsuffix .c,$(FILES)))
 
 OBJ = $(SRC:.c=.o)
 
-INC = -I$(INCDIR) -Ilibft/inc
 
 # Rules
 
 ALL: $(NAME)
 
-$(NAME): $(OBJ) $(LIB) 
-	ar rcs $(NAME) $(OBJ) $(addprefix $(INCDIR)/, $(LIB))
+$(NAME): $(LIB) $(OBJ) 
+	mv $(addprefix $(INCDIR)/, $(LIB)) $(NAME)
+	ar rcs $(NAME) $(OBJ)
 	ranlib $(NAME)
 
 $(SRCDIR)/%.o: $(SRCDIR)/%.c $(HEADER)
-	$(CC) $(CFLAGS) -c $< -o $@ $(INC)
+	$(CC) $(CFLAGS) -c $< -o $@ -I$(INCDIR) 
 
 $(LIB):
 	make -C libft
+
+$(HEADER): 
+	cp libft/inc/libft.h $(INCDIR)
 
 # Phony rules
 
 clean: 
 	rm -rf $(OBJ)
 	make clean -C libft
+	rm -f $(addprefix $(INCDIR)/, libft.h)
 
 fclean: clean
 	rm -rf $(NAME)

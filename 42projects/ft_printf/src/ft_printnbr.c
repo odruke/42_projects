@@ -1,23 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   ft_printnbr.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: odruke <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/30 12:16:00 by odruke            #+#    #+#             */
-/*   Updated: 2023/05/07 19:22:01 by odruke           ###   ########.fr       */
+/*   Created: 2023/05/07 17:39:57 by odruke            #+#    #+#             */
+/*   Updated: 2023/05/07 19:23:30 by odruke           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
-# include "stdarg.h"
-# include <stdio.h>
-# include <unistd.h>
-int	ft_printnbr(int i);
-int	ft_printf(char *str, ...);
-int	ft_printchar(int  c);
-int	ft_printstr(char *str);
+#include "ft_printf.h"
+#include "libft.h"
+int	ft_printnbr(int	i)
+{
+	int	len;
+	char	*nbr;
 
-# endif
+	nbr = ft_itoa(i);
+	len = ft_strlen(nbr);
+	return (len);
+	free (nbr);
+}
