@@ -1,25 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printnbr.c                                      :+:      :+:    :+:   */
+/*   ft_printptr.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: odruke <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: druke <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/07 17:39:57 by odruke            #+#    #+#             */
-/*   Updated: 2023/05/07 19:59:57 by druke            ###   ########.fr       */
+/*   Created: 2023/05/07 21:58:04 by druke             #+#    #+#             */
+/*   Updated: 2023/05/07 22:06:33 by druke            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
 #include "libft.h"
-int	ft_printnbr(int	i)
+
+int	ft_printptr(int	*ptr)
 {
 	int	len;
-	char	*nbr;
-
-	nbr = ft_itoa(i);
-	len = ft_strlen(nbr);
-	ft_printstr(nbr);
-	free (nbr);
+	int	adress;
+	char	*cadress;
+	
+	adress = &ptr;
+	cadress = ft_itoa(adress);
+	ft_printstr(cadress);
+	len = ft_strlen(cadress);
 	return (len);
+
 }
