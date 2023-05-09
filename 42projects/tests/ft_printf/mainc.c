@@ -17,5 +17,5 @@ int	main()
 	ft_printf("the letter is %c\n", c);
 	ft_printf("the string is ->%s<-, and the char is %c, and why not, another char %c\n", str, c, c);
 	ft_printf("by the way, this is a number %i\n", INT_MAX);
-	ft_printf("this is a void ptr %p", (void *)ptr);
+	ft_printf("this is a void ptr %p\n", (void *)ptr);
 }
