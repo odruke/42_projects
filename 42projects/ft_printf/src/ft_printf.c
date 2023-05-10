@@ -6,7 +6,11 @@
 /*   By: druke <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/26 18:10:07 by druke             #+#    #+#             */
+<<<<<<< HEAD
 /*   Updated: 2023/05/10 06:53:37 by druke            ###   ########.fr       */
+=======
+/*   Updated: 2023/05/09 21:21:40 by odruke           ###   ########.fr       */
+>>>>>>> 474f25efc0cbf9ed336d9221c938690a43204dbb
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,14 +26,16 @@ static int	f_format(va_list args, const char format)
 		len += ft_printchar('%');
 	else if (format == 's')
 		len += ft_printstr(va_arg(args, char*));
-	else if (format == 'i')
-		len += ft_printnbr(va_arg(args, int));
-	else if (format == 'd')
+	else if ((format == 'i') || (format == 'd'))
 		len += ft_printnbr(va_arg(args, int));
 	else if (format == 'p')
+<<<<<<< HEAD
 		len += ft_printptr(va_arg(args, void*));
 	else if ((format == 'x') || (format == 'X'))
 		len += ft_printptr(va_arg(args, int));
+=======
+		len += ft_printptr(va_arg(args, unsigned long long));
+>>>>>>> 474f25efc0cbf9ed336d9221c938690a43204dbb
 	return (len);
 }
 int	ft_printf(char *str, ...)
