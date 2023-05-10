@@ -18,6 +18,7 @@ int	main()
 {
 	char	*str;
 	char	c;
+	int	hex;
 	int	i;
 	int	*ptr;
 	int len1a;
@@ -30,8 +31,11 @@ int	main()
 	int len4b;
 	int len5a;
 	int len5b;
+	int len6a;
+	int len6b;
 
 	i = 42;
+	hex = 12341427;
 	c =  'a';
 	ptr = &i;
 	str = (char *)malloc(15 * sizeof(char));
@@ -72,11 +76,17 @@ int	main()
 	printf("\n\n\n");
 
 	printf("\ndef========\n");
-	len4a = printf("this is int %%d\n->%d<-\n", i);
+	len5a = printf("this is int %%d\n->%d<-\n", i);
 	ft_printf("\nown========\n");
-	len4b = ft_printf("this is int %%d\n->%d<-\n", i);
+	len5b = ft_printf("this is int %%d\n->%d<-\n", i);
 	comparelen(len5a, len5b);
 	printf("\n\n\n");
+
+	printf("\ndef========\n");
+	len6a = printf("this is hex%%x\n->%x<-\n", hex);
+	ft_printf("\nown========\n");
+	len6b = ft_printf("this is hex%%x\n->%x<-\n", hex);
+	comparelen(len6a, len6b);
 /*
 	printf("===========\n");
 	printf("this is string with a 20 width %%20s\n->%20s<-\n",str);

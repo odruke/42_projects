@@ -6,7 +6,7 @@
 /*   By: druke <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/07 21:58:04 by druke             #+#    #+#             */
-/*   Updated: 2023/05/09 07:39:57 by druke            ###   ########.fr       */
+/*   Updated: 2023/05/10 20:39:55 by druke            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,31 +28,32 @@ static int	f_ptrlen(uintptr_t num)
 
 static	void f_putptr(uintptr_t num, int len)
 {
+	char	temp[17];
 	while (len > 0)
 	{
 		if ((num % 16) <= 9)
-			ft_printchar(48 + (num % 16));
+			temp[--len] = (48 + (num % 16));
 		else
-			ft_printchar((num % 16) + 87);
+			temp[--len] = ((num % 16) + 87);
 		num /= 16;
-		len--;
 	}
+	ft_printstr(temp);
 }
 
-int	ft_printptr(unsigned long long *ptr)
+int	ft_printptr(unsigned long long ptr)
 {
 	int	len;
 
 	len = 2;
 	write (1, "0x",2);
-	if (*ptr == 0)
+	if (ptr == 0)
 	{
 		write(1, "0", 1);
 	}
 	else
 	{
-		f_putptr(*ptr, f_ptrlen(*ptr));
-		len += f_ptrlen(*ptr); 
+		f_putptr(ptr, f_ptrlen(ptr));
+		len += f_ptrlen(ptr); 
 	}	
 	return (len);
 }
