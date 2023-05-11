@@ -33,6 +33,8 @@ int	main()
 	int len5b;
 	int len6a;
 	int len6b;
+	int len7a;
+	int len7b;
 
 	i = 42;
 	hex = 12341427;
@@ -87,6 +89,14 @@ int	main()
 	ft_printf("\nown========\n");
 	len6b = ft_printf("this is hex%%x\n->%x<-\n", hex);
 	comparelen(len6a, len6b);
+	printf("\n\n\n");
+
+	printf("\ndef========\n");
+	len7a = printf("this is hex%%X\n->%X<-\n", hex);
+	ft_printf("\nown========\n");
+	len7b = ft_printf("this is hex%%X\n->%X<-\n", hex);
+	comparelen(len7a, len6b);
+	printf("\n\n\n");
 /*
 	printf("===========\n");
 	printf("this is string with a 20 width %%20s\n->%20s<-\n",str);

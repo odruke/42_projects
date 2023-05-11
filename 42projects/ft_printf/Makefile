@@ -6,7 +6,7 @@
 #    By: druke <marvin@42.fr>                       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/04/22 11:08:24 by druke             #+#    #+#              #
-#    Updated: 2023/05/10 21:44:53 by druke            ###   ########.fr        #
+#    Updated: 2023/05/11 07:41:16 by druke            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,6 +30,7 @@ FILES = ft_printf\
 	ft_printnbr\
 	ft_printptr\
 	ft_printhex\
+	ft_printunsigned\
 
 
 HEADER = $(addprefix $(INCDIR)/, ft_printf.h libft.h)
