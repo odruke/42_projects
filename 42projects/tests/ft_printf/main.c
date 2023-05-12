@@ -21,6 +21,7 @@ int	main()
 	int	hex;
 	int	i;
 	int	*ptr;
+	unsigned int	u;
 	int len1a;
 	int len1b;
 	int len2a;
@@ -35,8 +36,11 @@ int	main()
 	int len6b;
 	int len7a;
 	int len7b;
+	int len8a;
+	int len8b;
 
 	i = 42;
+	u = 42;
 	hex = 12341427;
 	c =  'a';
 	ptr = &i;
@@ -96,6 +100,13 @@ int	main()
 	ft_printf("\nown========\n");
 	len7b = ft_printf("this is hex%%X\n->%X<-\n", hex);
 	comparelen(len7a, len6b);
+	printf("\n\n\n");
+
+	printf("\ndef========\n");
+	len8a = printf("this is unsigned%%u\n->%u<-\n", u);
+	ft_printf("\nown========\n");
+	len8b = ft_printf("this is unsigned%%u\n->%u<-\n", u);
+	comparelen(len8a, len8b);
 	printf("\n\n\n");
 /*
 	printf("===========\n");
