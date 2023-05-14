@@ -38,6 +38,8 @@ int	main()
 	int len7b;
 	int len8a;
 	int len8b;
+	int len9a;
+	int len9b;
 
 	i = 42;
 	u = 42;
@@ -108,6 +110,14 @@ int	main()
 	len8b = ft_printf("this is unsigned%%u\n->%u<-\n", u);
 	comparelen(len8a, len8b);
 	printf("\n\n\n");
+
+	printf("\ndef========\n");
+	len9a = printf("test %u ", 1234523);
+	ft_printf("\nown========\n");
+	len9b = ft_printf;("test %u ", 1234523);
+	comparelen(len9a, len9b);
+	printf("\n\n\n");
+
 /*
 	printf("===========\n");
 	printf("this is string with a 20 width %%20s\n->%20s<-\n",str);

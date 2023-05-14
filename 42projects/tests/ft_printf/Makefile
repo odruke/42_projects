@@ -15,7 +15,7 @@ LIBDIR = ../../ft_printf
 
 HEADER = $(addprefix $(INCDIR)/, ft_printf.h)
 
-LIB = $(addprefix $(LIBDIR)/, ft_printf.a)
+LIB = $(addprefix $(LIBDIR)/, libftprintf.a)
 
 SRC = main.c
 

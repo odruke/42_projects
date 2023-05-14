@@ -6,13 +6,13 @@
 #    By: druke <marvin@42.fr>                       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/04/22 11:08:24 by druke             #+#    #+#              #
-#    Updated: 2023/05/11 07:41:16 by druke            ###   ########.fr        #
+#    Updated: 2023/05/12 21:15:20 by druke            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 # Variables
 
-NAME = ft_printf.a
+NAME = libftprintf.a
 
 CC = gcc
 
@@ -42,7 +42,7 @@ OBJ = $(SRC:.c=.o)
 
 # Rules
 
-ALL: $(NAME)
+all: $(NAME)
 
 $(NAME): $(LIB) $(OBJ) 
 	mv $(addprefix $(INCDIR)/, $(LIB)) $(NAME)
