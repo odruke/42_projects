@@ -6,7 +6,7 @@
 /*   By: druke <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/11 07:34:17 by druke             #+#    #+#             */
-/*   Updated: 2023/05/14 09:26:46 by druke            ###   ########.fr       */
+/*   Updated: 2023/05/15 20:02:16 by odruke           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,8 @@ int	ft_printunsigned(unsigned int i)
 
 	cint = (int)i;
 	len = 0;
-	if (cint < 0)
-		cint *= -1;
+//	if (cint < 0)
+//		cint *= -1;
 	len = ft_printnbr(cint);
 	return (len);
 }

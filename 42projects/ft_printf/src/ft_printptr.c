@@ -6,7 +6,7 @@
 /*   By: druke <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/07 21:58:04 by druke             #+#    #+#             */
-/*   Updated: 2023/05/15 07:36:20 by druke            ###   ########.fr       */
+/*   Updated: 2023/05/15 20:37:00 by odruke           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,11 @@ static int	f_ptrlen(uintptr_t num)
 
 static	void	f_putptr(uintptr_t num, int len)
 {
-	char	temp[17];
+	char	*temp;
 
+	temp = malloc(sizeof(char) * len);
+	if (len > ULONG_MAX)
+		len = ULONG_MAX; 
 	while (len > 0)
 	{
 		if ((num % 16) <= 9)
@@ -39,6 +42,7 @@ static	void	f_putptr(uintptr_t num, int len)
 		num /= 16;
 	}
 	ft_printstr(temp);
+	free (temp);
 }
 
 int	ft_printptr(unsigned long long ptr)
