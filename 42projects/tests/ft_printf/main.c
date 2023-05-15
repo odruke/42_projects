@@ -40,6 +40,8 @@ int	main()
 	int len8b;
 	int len9a;
 	int len9b;
+	int len10a;
+	int len10b;
 
 	i = 42;
 	u = 42;
@@ -112,10 +114,19 @@ int	main()
 	printf("\n\n\n");
 
 	printf("\ndef========\n");
-	len9a = printf("test %u ", 1234523);
+	len9a = printf(" NULL %s NULL ", NULL);
 	ft_printf("\nown========\n");
-	len9b = ft_printf;("test %u ", 1234523);
+	len9b = ft_printf(" NULL %s NULL ", NULL);
+	printf("\n");
 	comparelen(len9a, len9b);
+	printf("\n\n\n");
+
+	printf("\ndef========\n");
+	len10a = printf(" %p %p ", 0, 0);
+	ft_printf("\nown========\n");
+	len10b = ft_printf(" %p %p ", 0, 0);
+	printf("\n");
+	comparelen(len10a, len10b);
 	printf("\n\n\n");
 
 /*
