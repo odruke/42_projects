@@ -141,9 +141,9 @@ int	main()
 	comparelen(len11a, len11b);
 	printf("\n\n\n");
 
-//	printf("\ndef========\n");
-//	len12a = printf("what is happening %u here ", -1);
-//	ft_printf("\nown========\n");
+	printf("\ndef========\n");
+	len12a = printf("what is happening %u here ", -1);
+	ft_printf("\nown========\n");
 	len12b = ft_printf(" %u ", -1);
 	printf("\n");
 	comparelen(len12a, len12b);
