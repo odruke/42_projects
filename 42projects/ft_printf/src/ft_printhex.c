@@ -6,7 +6,7 @@
 /*   By: druke <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/10 06:44:10 by druke             #+#    #+#             */
-/*   Updated: 2023/05/14 09:39:38 by druke            ###   ########.fr       */
+/*   Updated: 2023/05/17 21:21:24 by odruke           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,13 @@ int	ft_printhex(unsigned int i, const char format)
 	int	len;
 
 	len = 0;
-	f_puthex(i, f_len(i), format);
-	len = f_len(i);
+	if (i == 0)
+	{
+		write (1, "0", 1);
+		return (1);
+	}
+	else
+		f_puthex(i, f_len(i), format);
+		len = f_len(i);
 	return (len);
 }

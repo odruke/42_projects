@@ -6,7 +6,7 @@
 /*   By: druke <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/07 21:58:04 by druke             #+#    #+#             */
-/*   Updated: 2023/05/15 20:37:00 by odruke           ###   ########.fr       */
+/*   Updated: 2023/05/17 20:34:21 by odruke           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 static int	f_ptrlen(uintptr_t num)
 {
-	int	len;
+	unsigned long int	len;
 
 	len = 0;
 	while (num != 0)
@@ -26,13 +26,15 @@ static int	f_ptrlen(uintptr_t num)
 	return (len);
 }
 
-static	void	f_putptr(uintptr_t num, int len)
+static int	f_putptr(uintptr_t num, unsigned long int len)
 {
 	char	*temp;
 
 	temp = malloc(sizeof(char) * len);
+	if (!temp)
+		return (0);
 	if (len > ULONG_MAX)
-		len = ULONG_MAX; 
+		len = ULONG_MAX;
 	while (len > 0)
 	{
 		if ((num % 16) <= 9)
@@ -43,6 +45,7 @@ static	void	f_putptr(uintptr_t num, int len)
 	}
 	ft_printstr(temp);
 	free (temp);
+	return (1);
 }
 
 int	ft_printptr(unsigned long long ptr)
@@ -53,6 +56,8 @@ int	ft_printptr(unsigned long long ptr)
 	write (1, "0x", 2);
 	if (ptr == 0)
 		len += write(1, "0", 1);
+	else if (ptr < 0)
+		len += write(1, "1", 1);
 	else
 	{
 		f_putptr(ptr, f_ptrlen(ptr));
