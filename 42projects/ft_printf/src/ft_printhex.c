@@ -6,7 +6,7 @@
 /*   By: druke <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/10 06:44:10 by druke             #+#    #+#             */
-/*   Updated: 2023/05/17 21:21:24 by odruke           ###   ########.fr       */
+/*   Updated: 2023/05/18 13:19:52 by odruke           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,24 +26,25 @@ static int	f_len(unsigned int i)
 	return (len);
 }
 
-static	void	f_puthex(unsigned int i, int len, const char format)
+static void	f_puthex(unsigned int num, const char format)
 {
-	char	temp[17];
-
-	while (len > 0)
+	if (num >= 16)
 	{
-		if ((i % 16) <= 9)
-			temp[--len] = (48 + (i % 16));
+		f_puthex(num / 16, format);
+		f_puthex(num % 16, format);
+	}
+	else
+	{
+		if (num <= 9)
+			ft_putchar_fd((num + '0'), 1);
 		else
 		{
 			if (format == 'x')
-				temp[--len] = ((i % 16) + 87);
-			else if (format == 'X')
-				temp[--len] = ((i % 16) + 55);
+				ft_putchar_fd((num - 10 + 'a'), 1);
+			if (format == 'X')
+				ft_putchar_fd((num - 10 + 'A'), 1);
 		}
-		i /= 16;
 	}
-	ft_printstr(temp);
 }
 
 int	ft_printhex(unsigned int i, const char format)
@@ -57,7 +58,7 @@ int	ft_printhex(unsigned int i, const char format)
 		return (1);
 	}
 	else
-		f_puthex(i, f_len(i), format);
+		f_puthex(i, format);
 		len = f_len(i);
 	return (len);
 }

@@ -62,7 +62,7 @@ int	main()
 	}
 
 	strcpy(str, "something here");
-/*
+
 	printf("\ndef========\n");
 	len1a = printf("this is char %%c\n->%c<-\n", c);
 	ft_printf("\nown========\n");
@@ -119,22 +119,22 @@ int	main()
 	comparelen(len8a, len8b);
 	printf("\n\n\n");
 
-//	printf("\ndef========\n");
-//	len9a = printf(" NULL %s NULL ", NULL);
-//	ft_printf("\nown========\n");
+	printf("\ndef========\n");
+	len9a = printf(" NULL %s NULL ", NULL);
+	ft_printf("\nown========\n");
 	len9b = ft_printf(" NULL %s NULL ", NULL);
 	printf("\n");
 	comparelen(len9a, len9b);
 	printf("\n\n\n");
 
-//	printf("\ndef========\n");
-//	len10a = printf(" %p %p ", 0, 0);
-//	ft_printf("\nown========\n");
+	printf("\ndef========\n");
+	len10a = printf(" %p %p ", 0, 0);
+	ft_printf("\nown========\n");
 	len10b = ft_printf(" %p %p ", 0, 0);
 	printf("\n");
 	comparelen(len10a, len10b);
 	printf("\n\n\n");
-*/
+
 	printf("\ndef========\n");
 	len11a = printf(" %p %p ", ULONG_MAX, -ULONG_MAX);
 	ft_printf("\nown========\n");
@@ -143,23 +143,23 @@ int	main()
 	comparelen(len11a, len11b);
 	printf("\n\n\n");
 
-/*
+
 	printf("\ndef========\n");
-	len12a = printf("what is happening %u here ", -1);
+	len12a = printf(" %u ", -1);
 	ft_printf("\nown========\n");
 	len12b = ft_printf(" %u ", -1);
 	printf("\n");
 	comparelen(len12a, len12b);
 	printf("\n\n\n");
-	*/
-/*	printf("\ndef========\n");
+	
+	printf("\ndef========\n");
 	len13a = printf(" %x ", 0);
 	ft_printf("\nown========\n");
 	len13b = ft_printf(" %x ", 0);
 	printf("\n");
 	comparelen(len13a, len13b);
 	printf("\n\n\n");
-
+/*
 	printf("===========\n");
 	printf("this is string with a 20 width %%20s\n->%20s<-\n",str);
 	printf("===========\n");
