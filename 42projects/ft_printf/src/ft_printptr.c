@@ -6,7 +6,7 @@
 /*   By: druke <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/07 21:58:04 by druke             #+#    #+#             */
-/*   Updated: 2023/05/17 20:34:21 by odruke           ###   ########.fr       */
+/*   Updated: 2023/05/18 11:17:02 by odruke           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,26 +26,20 @@ static int	f_ptrlen(uintptr_t num)
 	return (len);
 }
 
-static int	f_putptr(uintptr_t num, unsigned long int len)
+static void	f_putptr(uintptr_t num)
 {
-	char	*temp;
-
-	temp = malloc(sizeof(char) * len);
-	if (!temp)
-		return (0);
-	if (len > ULONG_MAX)
-		len = ULONG_MAX;
-	while (len > 0)
+	if (num >= 16)
 	{
-		if ((num % 16) <= 9)
-			temp[--len] = (48 + (num % 16));
-		else
-			temp[--len] = ((num % 16) + 87);
-		num /= 16;
+		f_putptr(num / 16);
+		f_putptr(num % 16);
 	}
-	ft_printstr(temp);
-	free (temp);
-	return (1);
+	else
+	{
+		if (num <= 9)
+			ft_putchar_fd((num + '0'), 1);
+		else
+			ft_putchar_fd((num - 10 + 'a'), 1);
+	}
 }
 
 int	ft_printptr(unsigned long long ptr)
@@ -55,12 +49,13 @@ int	ft_printptr(unsigned long long ptr)
 	len = 2;
 	write (1, "0x", 2);
 	if (ptr == 0)
+	{
 		len += write(1, "0", 1);
-	else if (ptr < 0)
-		len += write(1, "1", 1);
+		return (len);
+	}
 	else
 	{
-		f_putptr(ptr, f_ptrlen(ptr));
+		f_putptr(ptr);
 		len += f_ptrlen(ptr);
 	}	
 	return (len);
