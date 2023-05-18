@@ -48,6 +48,8 @@ int	main()
 	int len12a;
 	int len13b;
 	int len13a;
+	int len14b;
+	int len14a;
 
 	i = 42;
 	u = 42;
@@ -159,6 +161,16 @@ int	main()
 	printf("\n");
 	comparelen(len13a, len13b);
 	printf("\n\n\n");
+
+	printf("\ndef========\n");
+	len14a = printf("%s ", "");
+	ft_printf("\nown========\n");
+	len14b = ft_printf("%s ", "");
+	printf("\n");
+	comparelen(len14a, len14b);
+	printf("\n\n\n");
+
+	printf("               END OF TEST\n\n\n");
 /*
 	printf("===========\n");
 	printf("this is string with a 20 width %%20s\n->%20s<-\n",str);

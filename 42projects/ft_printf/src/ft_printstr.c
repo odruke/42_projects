@@ -6,7 +6,7 @@
 /*   By: druke <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/05 08:42:22 by druke             #+#    #+#             */
-/*   Updated: 2023/05/17 20:30:02 by odruke           ###   ########.fr       */
+/*   Updated: 2023/05/18 19:03:57 by odruke           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,8 @@ int	ft_printstr(char *str)
 		write (1, "(null)", 6);
 		return (6);
 	}
+	else if (*str == '\0')
+		return (0);
 	while (str[i])
 	{
 		ft_printchar(str[i]);

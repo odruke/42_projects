@@ -6,12 +6,13 @@
 /*   By: druke <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/26 18:10:07 by druke             #+#    #+#             */
-/*   Updated: 2023/05/14 09:46:08 by druke            ###   ########.fr       */
+/*   Updated: 2023/05/18 20:16:12 by odruke           ###   ########.fr       */
 /*   Updated: 2023/05/09 21:21:40 by odruke           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+#include "libft.h"
 
 static int	f_format(va_list args, const char format)
 {
@@ -35,24 +36,42 @@ static int	f_format(va_list args, const char format)
 	return (len);
 }
 
-int	ft_printf(const char *format, ...)
+static int	checkplh(char c)
+{
+	char	*formatlist;
+
+	formatlist = "cx%sidpxXu";
+	if (!c || !ft_strchr(formatlist, c))
+		return (0);
+	else
+		return (1);
+}
+
+int	ft_printf(const char *str, ...)
 {
 	va_list	args;
 	int		len;
 	int		i;
 
 	len = 0;
-	va_start(args, format);
+	va_start(args, str);
 	i = -1;
-	while (format[++i])
+	if (!str || *str == '\0')
+		return (0);
+	while (str[++i])
 	{
-		if (format[i] == '%')
+		if (str[i] == '%')
 		{
-			len += f_format(args, (format[i + 1]));
-			i++;
+			if (!checkplh(str[i + 1]))
+				break ;
+			len += f_format(args, (str[i++ + 1]));
 		}
 		else
-			len += ft_printchar(format[i]);
+		{
+			len += ft_printchar(str[i]);
+			if (len == 0)
+				break ;
+		}
 	}
 	va_end(args);
 	return (len);
