@@ -1,0 +1,4 @@
+In the first line of the txt2, everything is normal, btw, we are going to submit some special characters in the second one
+here, some special characters !@#$%$%%^%&%^$&*%^*())__+||``~|"}{\'}{'\<>?><?><\|
+
+this is the forth line, because the third was only a \n character. Btw, this is the last line ->

@@ -1,0 +1,4 @@
+this is the first line of the txt1 file
+and this is the second line of the txt1 file
+we are now at the third line of the txt1 file
+his is the forth and last line of the txt1 file, and therefore this, is the end of file ->
