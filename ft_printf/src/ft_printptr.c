@@ -6,7 +6,7 @@
 /*   By: druke <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/07 21:58:04 by druke             #+#    #+#             */
-/*   Updated: 2023/05/18 11:17:02 by odruke           ###   ########.fr       */
+/*   Updated: 2023/05/21 09:38:38 by druke            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ int	ft_printptr(unsigned long long ptr)
 
 	len = 2;
 	write (1, "0x", 2);
-	if (ptr == 0)
+	if (ptr == 0 || !ptr)
 	{
 		len += write(1, "0", 1);
 		return (len);

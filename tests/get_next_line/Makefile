@@ -6,7 +6,7 @@ NAME2 = getbonus
 
 CC = gcc
 
-CFLAGS = -Wall -Werror -Wextra
+CFLAGS = -Wall -Werror -Wexta
 
 BUFFER = -D BUFFER_SIZE=42
 
@@ -20,7 +20,7 @@ FILES = main\
      $(addprefix $(INCDIR)/, get_next_line)\
      $(addprefix $(INCDIR)/, get_next_line_utils)
 
-SRC = $(addsuffix .c,$(FILES),)
+SRC = $(addsuffix .c,$(FILES))
 
 OBJ = $(SRC:.c=.o)
 

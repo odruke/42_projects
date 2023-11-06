@@ -50,6 +50,8 @@ int	main()
 	int len13a;
 	int len14b;
 	int len14a;
+	int len15b;
+	int len15a;
 
 	i = 42;
 	u = 42;
@@ -64,7 +66,7 @@ int	main()
 	}
 
 	strcpy(str, "something here");
-
+/*
 	printf("\ndef========\n");
 	len1a = printf("this is char %%c\n->%c<-\n", c);
 	ft_printf("\nown========\n");
@@ -169,7 +171,14 @@ int	main()
 	printf("\n");
 	comparelen(len14a, len14b);
 	printf("\n\n\n");
-
+*/
+	printf("\ndef========\n");
+	len15a = printf(" %p %p ", 0, 0);
+	ft_printf("\nown========\n");
+	len15b = ft_printf(" %p %p ", 0, 0);
+	printf("\n");
+	comparelen(len15a, len15b);
+	printf("\n\n\n");
 	printf("               END OF TEST\n\n\n");
 /*
 	printf("===========\n");

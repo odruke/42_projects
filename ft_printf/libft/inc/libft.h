@@ -6,7 +6,7 @@
 /*   By: druke <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/20 20:38:41 by druke             #+#    #+#             */
-/*   Updated: 2023/03/25 21:55:42 by odruke           ###   ########.fr       */
+/*   Updated: 2023/05/03 21:01:37 by druke            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@
 # include <stdio.h>
 # include <limits.h>
 
+void	ft_putchar(char c);
+void	ft_putstr(char *str);
 int		ft_isalpha(int a);
 int		ft_isdigit(int a);
 int		ft_isascii(int a);

@@ -6,7 +6,7 @@
 #    By: druke <marvin@42.fr>                       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/19 20:24:30 by druke             #+#    #+#              #
-#    Updated: 2023/03/15 16:22:19 by druke            ###   ########.fr        #
+#    Updated: 2023/11/06 14:49:38 by druke            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -83,6 +83,16 @@ OBJS = ft_isalpha.o\
        ft_putendl_fd.o\
        ft_putnbr_fd.o\
 
+BSRC = ft_lstnew.c\
+       ft_lstadd_front.c\
+       ft_lstsize.c\
+       ft_lstlast.c\
+
+BOBJS = ft_lstnew.o\
+	ft_lstadd_front.o\
+	ft_lstsize.c\
+	ft_lstlast.o\
+
 CC = gcc
 
 CFLAGS = -Wall -Werror -Wextra
@@ -92,15 +102,19 @@ HEADER = libft.h
 all: $(NAME)
 
 $(NAME):
-	$(CC) $(FLAGS) -c $(SRC)
+	$(CC) $(CFLAGS) -c $(SRC)
 	ar rcs $(NAME) $(OBJS)
 	ranlib $(NAME)
  
+bonus: $(NAME) $(BOBJS) 
+	$(CC) $(CFLAGS) -c $(BSRC)
+	ar rcs $(NAME) $(BOBJS)
+	ranlib $(NAME)
 clean:
-	rm -f $(OBJS)
+	rm -f $(OBJS) $(BOBJS)
 
 fclean: clean
-	rm -f $(NAME)
+	rm -f $(NAME) 
 
 re: fclean all
 

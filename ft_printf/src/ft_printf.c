@@ -6,7 +6,7 @@
 /*   By: druke <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/26 18:10:07 by druke             #+#    #+#             */
-/*   Updated: 2023/05/18 20:16:12 by odruke           ###   ########.fr       */
+/*   Updated: 2023/05/21 09:33:20 by druke            ###   ########.fr       */
 /*   Updated: 2023/05/09 21:21:40 by odruke           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
@@ -54,8 +54,8 @@ int	ft_printf(const char *str, ...)
 	int		i;
 
 	len = 0;
-	va_start(args, str);
 	i = -1;
+	va_start(args, str);
 	if (!str || *str == '\0')
 		return (0);
 	while (str[++i])

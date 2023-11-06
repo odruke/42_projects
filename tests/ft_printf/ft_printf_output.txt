@@ -1,0 +1,3 @@
+The value of pi is: 3.141592
+The value of pi is: 3.141592
+Output is the same
