@@ -6,7 +6,7 @@
 /*   By: druke <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 14:47:55 by druke             #+#    #+#             */
-/*   Updated: 2023/11/06 14:53:03 by druke            ###   ########.fr       */
+/*   Updated: 2023/11/06 22:35:17 by druke            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,9 @@
 
 t_list	*ft_lstlast(t_list *lst)
 {
-	while(lst->next)
-	{
+	if (!lst)
+		return (0);
+	while (lst->next)
 		lst = lst->next;
-	}
 	return (lst);
 }
-

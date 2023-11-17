@@ -6,7 +6,7 @@
 #    By: druke <marvin@42.fr>                       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/19 20:24:30 by druke             #+#    #+#              #
-#    Updated: 2023/11/06 14:49:38 by druke            ###   ########.fr        #
+#    Updated: 2023/11/07 13:10:06 by druke            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -87,11 +87,13 @@ BSRC = ft_lstnew.c\
        ft_lstadd_front.c\
        ft_lstsize.c\
        ft_lstlast.c\
+       ft_lstadd_back.c\
 
 BOBJS = ft_lstnew.o\
 	ft_lstadd_front.o\
-	ft_lstsize.c\
+	ft_lstsize.o\
 	ft_lstlast.o\
+	ft_lstadd_back.o\
 
 CC = gcc
 
